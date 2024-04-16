@@ -34,8 +34,8 @@ const managerInit = async () => {
                     </legend>
                     <input type="tel" id="invphone" name="phone" placeholder="Phone with extension *">
                     </fieldset>
-                <a class="gener" onclick="ValiderInvita()">
-                Valider
+                <a class="gener" id="loading" onclick="ValiderInvita()">
+                Send
             </a>
             </form>
         </div>
@@ -54,8 +54,11 @@ managerInit();
 
 const ValiderInvita = async () => {
     const invphone = document.getElementById('invphone').value;
+    const loading = document.getElementById('loading');
 
     if (invphone.startsWith("+")) {
+        loading.removeAttribute("onclick");
+        loading.innerText = "Sending ...";
         const data = {
             _id: inv_id,
             phone: invphone
@@ -86,6 +89,12 @@ const ValiderInvita = async () => {
                     Failure, please check your connection or try again later.
                  </legend>
             `;
+            setTimeout(() => {
+                messages.innerHTML = "";
+                messages.classList.remove("form-style-5");
+            }, 3000);
+            loading.setAttribute("onclick", "ValiderInvita()");
+            loading.innerText = "Send";
         } else if (responseData.done) {
             window.location.href = "https://chat.whatsapp.com/IbeLaLfLGKyA8tC5C53Ull";
         } else if (responseData.ee) {
@@ -95,6 +104,12 @@ const ValiderInvita = async () => {
                     This ${invphone} number has already been used!
                  </legend>
             `;
+            setTimeout(() => {
+                messages.innerHTML = "";
+                messages.classList.remove("form-style-5");
+            }, 3000);
+            loading.setAttribute("onclick", "ValiderInvita()");
+            loading.innerText = "Send";
         } else {
             document.getElementById('linkmessaa').innerHTML = `
                 <legend style="color: #bc1a42;">
@@ -102,6 +117,12 @@ const ValiderInvita = async () => {
                     Failure, please check your connection or try again later.
                  </legend>
             `;
+            setTimeout(() => {
+                messages.innerHTML = "";
+                messages.classList.remove("form-style-5");
+            }, 3000);
+            loading.setAttribute("onclick", "ValiderInvita()");
+            loading.innerText = "Send";
         }
     } else {
         const messagesr = document.getElementById('messagesa');
