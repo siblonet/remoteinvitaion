@@ -60,7 +60,7 @@ const ValiderInvita = async () => {
         loading.removeAttribute("onclick");
         loading.innerText = "Sending ...";
         const data = {
-            _id: inv_id,
+            invita: inv_id,
             phone: invphone
         };
 
