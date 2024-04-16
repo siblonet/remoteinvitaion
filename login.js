@@ -5,7 +5,7 @@ const Conneter = async () => {
 
     if (invphone && password) {
         loading.removeAttribute("onclick");
-        loading.innerText = "En cours ...";
+        loading.innerText = "Connecting ...";
         const data = {
             phone: invphone,
             password: password
@@ -32,7 +32,7 @@ const Conneter = async () => {
             document.getElementById('linkmessa').innerHTML = `
                     <legend style="color: #bc1a42;">
                         <span class="erro">1</span>
-                        Échec, vérifiez votre connexion ou essayez plus tard.
+                        Failure, please check your connection or try again later.
                     </legend>
                 `;
             setTimeout(() => {
@@ -41,7 +41,7 @@ const Conneter = async () => {
             }, 3000);
 
             loading.setAttribute("onclick", "Conneter()");
-            loading.innerText = "Conneter";
+            loading.innerText = "Login";
         } else if (responseData.id) {
             sessionStorage.setItem('invite', responseData.id);
             window.location.href = "/dashboard";
@@ -50,7 +50,7 @@ const Conneter = async () => {
             document.getElementById('linkmessa').innerHTML = `
             <legend style="color: #bc1a42;">
                 <span class="erro">1</span>
-                Information inccorrect.
+                Incorrect information.
             </legend>
         `;
 
@@ -59,7 +59,7 @@ const Conneter = async () => {
                 messages.classList.remove("form-style-5");
             }, 3000);
             loading.setAttribute("onclick", "Conneter()");
-            loading.innerText = "Conneter";
+            loading.innerText = "Login";
         }
 
     } else {
@@ -70,7 +70,7 @@ const Conneter = async () => {
                     <fieldset id="linkmessa">
                         <legend style="color: #bc1a42;">
                             <span class="erro">2</span>
-                            Renseignez tous.
+                            Please fill in all fields.
                         </legend>
                     </fieldset>
                 </form>

@@ -30,10 +30,10 @@ const managerInit = async () => {
                         <span class="number">
                             1
                         </span>
-                        Numéro WhatsApp (+1....)
+                        WhatsApp number ex: +1/+225/+226/+233...
                     </legend>
-                        <input type="tel" id="invphone" name="phone" placeholder="Téléphone avec extension*">
-                </fieldset>
+                    <input type="tel" id="invphone" name="phone" placeholder="Phone with extension *">
+                    </fieldset>
                 <a class="gener" onclick="ValiderInvita()">
                 Valider
             </a>
@@ -83,7 +83,7 @@ const ValiderInvita = async () => {
             document.getElementById('linkmessaa').innerHTML = `
                 <legend style="color: #bc1a42;">
                     <span class="erro">3</span>
-                    Échec, vérifiez votre connexion ou essayez plus tard.
+                    Failure, please check your connection or try again later.
                  </legend>
             `;
         } else if (responseData.done) {
@@ -92,14 +92,14 @@ const ValiderInvita = async () => {
             document.getElementById('linkmessaa').innerHTML = `
                 <legend>
                     <span class="number">3</span>
-                    Vous y êtes déjà !
+                    This ${invphone} number has already been used!
                  </legend>
             `;
         } else {
             document.getElementById('linkmessaa').innerHTML = `
                 <legend style="color: #bc1a42;">
                     <span class="erro">3</span>
-                    Échec, vérifiez votre connexion ou essayez plus tard.
+                    Failure, please check your connection or try again later.
                  </legend>
             `;
         }
@@ -111,7 +111,7 @@ const ValiderInvita = async () => {
                 <fieldset id="linkmessaa">
                     <legend style="color: #bc1a42;">
                         <span class="erro">3</span>
-                        Votre numéro WhatsApp avec l'indicatif du pays.
+                        You must specify the country (+225/+226/+233/...).
                     </legend>
                 </fieldset>
             </form>

@@ -9,8 +9,8 @@ const Generate = async () => {
     if (invn && invt && invm && invc && inva) {
         if (invm === invc) {
             loading.removeAttribute("onclick");
-            loading.innerText = "En cours ...";
-            
+            loading.innerText = "Connecting ...";
+
             const data = {
                 name: invn,
                 phone: invt,
@@ -41,16 +41,16 @@ const Generate = async () => {
                 document.getElementById('linkmessa').innerHTML = `
                     <legend style="color: #bc1a42;">
                         <span class="erro">3</span>
-                        Échec, vérifiez votre connexion ou essayez plus tard.
+                        Failure, please check your connection or try again later.
                     </legend>
                 `;
                 loading.setAttribute("onclick", "Generate()");
-                loading.innerText = "Générer";
+                loading.innerText = "Generate";
             } else {
                 document.getElementById('linkmessa').innerHTML = `
                     <legend>
                         <span class="number">2</span>
-                        Copiez votre lien d'invitation 
+                        Copy your invitation link. 
                     </legend>
                     <textarea name="field3" placeholder="lien">https://invitation-teletravail.netlify.app/enter?${responseData.id}</textarea>
                 `;
@@ -64,7 +64,7 @@ const Generate = async () => {
                     <fieldset id="linkmessa">
                         <legend style="color: #bc1a42;">
                             <span class="erro">3</span>
-                            Les pass ne sont pas conform.
+                            The passwords do not match.
                         </legend>
                     </fieldset>
                 </form>
@@ -83,7 +83,7 @@ const Generate = async () => {
                     <fieldset id="linkmessa">
                         <legend style="color: #bc1a42;">
                             <span class="erro">3</span>
-                            Renseignez tous.
+                            Please fill in all fields.
                         </legend>
                     </fieldset>
                 </form>

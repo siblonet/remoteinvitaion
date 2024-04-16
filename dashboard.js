@@ -25,11 +25,11 @@ const managerInit = async () => {
                         <span class="number">
                             #
                         </span>
-                        Voici ci-dessous votre lien.
+                        Here is your link below..
                     </legend>
                     <textarea name="field3" placeholder="lien" id="linkpast">https://invitation-teletravail.netlify.app/enter?${tolken}</textarea>
                 </fieldset>
-               <p>Copiez et partagez.</p>
+               <p>Copy and share.</p>
             </form>
         </div>
         `
