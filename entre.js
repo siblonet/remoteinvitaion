@@ -96,7 +96,7 @@ const ValiderInvita = async () => {
             loading.setAttribute("onclick", "ValiderInvita()");
             loading.innerText = "Send";
         } else if (responseData.done) {
-            window.location.href = "https://chat.whatsapp.com/IbeLaLfLGKyA8tC5C53Ull";
+            window.location.href = "https://chat.whatsapp.com/FjG0N0i2v0r27j4EuR6oQK";
         } else if (responseData.ee) {
             document.getElementById('linkmessaa').innerHTML = `
                 <legend>
